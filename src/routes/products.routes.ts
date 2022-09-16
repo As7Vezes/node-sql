@@ -1,5 +1,11 @@
-import { Request, Response } from "express";
+import { Router } from "express";
+import { productController } from "../controllers/product";
 
-const insertProducts = (req: Request, res: Response) => {
-    
+const productRouter = Router()
+
+productRouter.post('/products', productController.insertProducts)
+
+export {
+    productRouter
 }
+
